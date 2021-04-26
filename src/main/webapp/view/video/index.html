@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Video</title>
+</head>
+<body>
+<div th:each="video : ${videos}" >
+<a th:href="@{/video/{id}(id=${video.getId()})}" th:text="${video.getName() + ', ' + video.getIssue()}">user</a>
+</div>
+<br/>
+<hr/>
+
+<a href="/video/new">Add video</a>
+</body>
+</html>

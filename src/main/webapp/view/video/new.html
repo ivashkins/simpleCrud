@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Video</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/video}" th:object="${video}">
+    <label for="name">Enter name:</label>
+    <input type="text" th:field="*{name}" id="name">
+    <div style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+
+    <label for="time">Enter time:</label>
+    <input type="text" th:field="*{time}" id="time">
+    <div style="color: red" th:if="${#fields.hasErrors('time')}" th:errors="*{time}">time error</div>
+
+    <label for="link">Enter link:</label>
+    <input type="text" th:field="*{link}" id="link">
+    <div style="color: red" th:if="${#fields.hasErrors('link')}" th:errors="*{link}">Name error</div>
+
+    <label for="issue">Enter issue:</label>
+    <input type="text" th:field="*{issue}" id="issue">
+    <div style="color: red" th:if="${#fields.hasErrors('issue')}" th:errors="*{issue}">Name error</div>
+
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Video</title>
+</head>
+<body>
+<div>
+    <p th:text="Name + ': ' + ${video.getName()}">Value</p>
+    <p th:text="Time + ': '  + ${video.getTime()}">Value</p>
+    <p th:text="link + ': ' +${video.getLink()}">Value</p>
+    <p th:text="Issue + ': ' +${video.getIssue()}">Value</p>
+    <p th:text="id + ': ' + ${video.getId()}">Value</p>
+</div>
+<hr/>
+<a th:href="@{/video/{id}/edit(id=${video.getId()})}">Edit</a>
+<br/>
+<hr/>
+<form th:method="DELETE" th:action="@{/video/{id}(id=${video.getId()})}">
+    <input type="submit" value="Delete"/>
+</form>
+
+</body>
+</html>
